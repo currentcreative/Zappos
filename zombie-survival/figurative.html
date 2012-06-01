@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" zombie="width=device-width, initial-scale=1.0">
+
+<title>Demo: Responsive Design in 3 Steps</title>
+
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<style type="text/css">
+
+body {
+	font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+	color: #669;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+#header {
+	height: 180px;
+	text-align: center;
+}
+#zombie {
+	width: 288px;
+	float: left;
+	text-align: center;
+	overflow:hidden;
+}
+#content {
+	width: 612px;
+	float: right;
+}
+#footer {
+	clear: both; text-align:center; margin:20px auto;
+	font: .7em/85% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	
+	#pagewrap {
+		width: 94%;
+	}
+	#zombie {
+		width: 29%;
+	}
+	#content {
+		width: 66%;
+	}
+
+}
+
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+
+	#zombie {
+		width: auto;
+		float: none;
+	}
+	#content {
+		width: auto;
+		float: none;
+	}
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+	#header {
+		height: auto;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#zombie {
+		display: none;
+	}
+
+}
+
+/* border & guideline (you can ignore these) */
+#zombie {
+	background: #fff;
+}
+#content {
+	background: #fff;
+}
+#header, #zombie, #content {
+	margin-bottom: 5px;
+}
+#pagewrap, #header, #zombie, #content, #footer { 
+}
+
+
+/* graphics */
+
+.logo {
+margin:0 auto; margin-bottom:20px;
+width:390px; height:100px;
+text-indent:-9999px;
+background: url(images/zombie-survival-guide.gif) no-repeat;
+}
+
+.button {
+color: white;
+background-color:#bf1e2e; padding:5px 20px; margin:0px 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px; /* future proofing */
+-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.button:hover {
+text-decoration: none;
+background-color:gray;
+}
+
+#content h3 {
+width:95%;
+background-color: #bf1e2e;
+padding:2px 10px;
+color:#fff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="pagewrap">
+
+	<div id="header">
+	<h1 class="logo">Zombie Survival Guide</h1>
+		
+		
+		<a class="button" href="figurative.html">FIGURATIVE</a>
+		<a class="button"  href="literal.html">LITERAL</a>
+		
+	</div>
+
+	<div id="zombie">
+	<img src="images/tvzombie.jpg" alt="figurative" />
+	</div>
+
+	<div id="content">
+		<h3>Dress For Success</h3>
+		<ul>
+		<li>Blend in with your surroundings, according to circumstances. This is the simplest way to avoid zombie attention and save your brain from vicious attacks.</li>
+		<li>Do not make permanent style choices unless you are committed to the particular lifestyle that goes along with it.</li>
+		<li>Remember: fashion changes and a lively person who doesn't appear to be another zombie will stick out like a large cranium.</li>
+		<li>You may think you have enough wherewithal to ride out vicious zombie attacks, but you never know what the future may bring.</li>
+		</ul>
+		
+		<h3>Best Defense</h3>
+		<ul>
+		<li>Be conversational without being a know-it-all, a gossip, a martyr or a bully.</li>
+		<li>Keep a distance from those who break these conversational rules. They might turn you into a zombie, attract the attention of other zombies or even start a zombie war.</li>
+		<li>Be mindful of your brains at all times.</li>
+		</ul>
+		
+		<h3>Other Supplies</h3>
+		<ul>
+		<li>You will need books. Lots and lots of books. Learn everything you can from as many different perspectives as you can. In the privacy of your own home, you can enrich your delicious brains in this manner by reading whatever piques your interest. Just make sure the door is locked.</li>
+		<li>Proper nutrition - delicious brains really need proper nutrition. Don't follow the diets of zombies; if your healthy diet arouses suspicion, just play it down. Say you have an allergy or food intolerance. If your brain is properly fed, you will not risk the zombie-like tendency of craving other people's brains.</li>
+		<li>Values - figure out what sort of qualities people have whom you respect. Make a list of these qualities in order that you can respect yourself. Follow these values and you will not suffocate your delicious brains with conflict.</li>
+		<li>Work, play and sleep - the brain requires all three in balance. Listen to your brains.</li>
+		</ul>
+		
+	</div>
+	
+	<div id="footer">
+		<p>©2012 Armageddon Survival Guides™ All rights reserved.</p>
+	</div>
+
+</div>
+
+</body>
+</html>

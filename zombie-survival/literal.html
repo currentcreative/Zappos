@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" zombie="width=device-width, initial-scale=1.0">
+
+<title>Demo: Responsive Design in 3 Steps</title>
+
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<style type="text/css">
+
+body {
+	font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+	color: #669;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+#header {
+	height: 180px;
+	text-align: center;
+}
+#zombie {
+	width: 288px;
+	float: left;
+	text-align: center;
+	overflow:hidden;
+}
+#content {
+	width: 612px;
+	float: right;
+}
+#footer {
+	clear: both; text-align:center; margin:20px auto;
+	font: .7em/85% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	
+	#pagewrap {
+		width: 94%;
+	}
+	#zombie {
+		width: 29%;
+	}
+	#content {
+		width: 66%;
+	}
+
+}
+
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+
+	#zombie {
+		width: auto;
+		float: none;
+	}
+	#content {
+		width: auto;
+		float: none;
+	}
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+	#header {
+		height: auto;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#zombie {
+		display: none;
+	}
+
+}
+
+/* border & guideline (you can ignore these) */
+#zombie {
+	background: #fff;
+}
+#content {
+	background: #fff;
+}
+#header, #zombie, #content {
+	margin-bottom: 5px;
+}
+#pagewrap, #header, #zombie, #content, #footer { 
+}
+
+
+/* graphics */
+
+.logo {
+margin:0 auto; margin-bottom:20px;
+width:390px; height:100px;
+text-indent:-9999px;
+background: url(images/zombie-survival-guide.gif) no-repeat;
+}
+
+.button {
+color: white;
+background-color:#bf1e2e; padding:5px 20px; margin:0px 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px; /* future proofing */
+-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.button:hover {
+text-decoration: none;
+background-color:gray;
+}
+
+#content h3 {
+width:95%;
+background-color: #bf1e2e;
+padding:2px 10px;
+color:#fff;
+}
+
+</style></head>
+
+<body>
+
+<div id="pagewrap">
+
+	<div id="header">
+	<h1 class="logo">Zombie Survival Guide</h1>
+		
+		
+		<a class="button" href="figurative.html">FIGURATIVE</a>
+		<a class="button"  href="literal.html">LITERAL</a>
+		
+	</div>
+
+	<div id="zombie">
+	<img src="images/regularzombie.jpg" alt="figurative" />
+	</div>
+
+	<div id="content">
+		<h3>Dress For Success</h3>
+		<ul>
+		<li>Comfortable clothes.</li>
+		<li>No high heels.</li>
+		<li>Motorcycle helmet with visor.</li>
+		<li>leather jacket and gloves - zombies can’t chew through leather.</li>
+		</ul>
+		
+		<h3>Best Defense</h3>
+		<ul>
+		<li>Machete - hacks off limbs and heads, never needs a reload.</li>
+		<li>Hatchet - a nice backup, doubles as a hammer.</li>
+		<li>Guns - as much guns and ammo as you can carry.</li>
+		</ul>
+		
+		<h3>Other Supplies</h3>
+		<ul>
+		<li>Enough gas and food to get you from one city to another.</li>
+		<li>Rope - for tying doors closed when you are running through abandomed buildings.</li>
+		<li>Cleaning supplies - hand sanitizer & soap are going to come in handy after sweating in your leather all day fighting zombies.</li>
+		<li>Dental hygeine - world may be going to hell in a handbasket, but you don't need a toothache, too.</li>
+		<li>Water and Water Containers - speaking of sweating all day, you’ll need plenty of water. Fill up anywhere you might wash up.</li>
+		</ul>
+		
+	</div>
+	
+	<div id="footer">
+		<p>©2012 Armageddon Survival Guides™ All rights reserved.</p>
+	</div>
+
+</div>
+
+</body>
+</html>

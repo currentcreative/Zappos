@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Alphabetized Bookshelf</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.6.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+ 
+  	.bookshelf { 
+  	margin: 0 auto; height:500px; width:400px; text-align:left;
+  	top:50px; left:20%;
+  	list-style-type: none;
+    -webkit-transform: rotate(90deg); 
+    -moz-transform: rotate(90deg); 
+    position:absolute;  }
+    
+    #list { 
+    margin:0; padding:0;
+    }
+    #list li { 
+    display:block; 
+    text-transform:capitalize;
+    margin:0;padding:20px;
+    }
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+var lastClickedLi;
+
+$("ul li").live("click", function() {
+    lastClickedLi = $(this);
+    $("input").val(lastClickedLi.text());
+});
+
+
+
+$("#change").click(function() {
+    if (lastClickedLi)
+        lastClickedLi.text($("input").val());
+});
+});//]]> 
+
+$(document).ready(function() {
+    $('#list li').each(function () {
+        var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+        $(this).css("background-color", hue);
+    });
+}); 
+</script>
+<script type='text/javascript'>
+
+</script>
+
+</head>
+<body>
+
+<div class="bookshelf">
+  <ul id="list">
+  <li>The Elegant Universe</li>
+  <li>The Little Prince</li>
+  <li>This Is How</li>
+  <li>Confederacy of Dunces</li>
+  <li>Lord of the Rings</li>
+  <li>The Dark Tower</li>
+  <li>PHP Solutions</li>
+  <li>War and Peace</li>
+  <li>Goldie Locks and the Three Bears</li>
+</ul>
+</div>
+
+<div style="clear:both;">
+<br />Click on a title below to change it. Click the Alphabetize button to sort.
+<br /><input type="text" />
+<button id="change">change</button>
+<button id="test">Alphabetize List (click again to reverse)"</button>
+</div>  
+  <script type="text/javascript">
+  function sortUnorderedList(ul, sortDescending) {
+          if(typeof ul == "string")
+            ul = document.getElementById(ul);
+
+          var lis = ul.getElementsByTagName("LI");
+          var vals = [];
+
+          for(var i = 0, l = lis.length; i < l; i++)
+            vals.push(lis[i].innerHTML);
+
+          vals.sort();
+
+          if(sortDescending)
+            vals.reverse();
+
+          for(var i = 0, l = lis.length; i < l; i++)
+            lis[i].innerHTML = vals[i];
+        }
+        
+        window.onload = function() {
+          var desc = false;
+          document.getElementById("test").onclick = function() {
+            sortUnorderedList("list", desc);
+            desc = !desc;
+            return false;
+          }
+        }
+sortUnorderedList("books");
+</script>
+</body>
+
+
+</html>
+
